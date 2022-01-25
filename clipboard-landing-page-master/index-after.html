@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Clipboard landing page</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    /* ================css  */
+    :root {
+
+      /* clr */
+      --clr-cyan: hsl(171, 66%, 44%);
+      --clr-lgiht_blue: hsl(233, 100%, 69%);
+      --clr-accent: hsl(210, 10%, 33%);
+      --clr-primary: hsl(201, 11%, 66%);
+
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body,
+    html {
+      width: 100%;
+      height: 100vh;
+    }
+
+    h1,
+    h3 {
+      color: var(--clr-accent);
+    }
+
+    h1 {
+      font-size: 32px;
+    }
+
+    h3 {
+      font-size: 28px;
+      line-height: 35px;
+      font-weight: bold;
+      letter-spacing: -0.02em;
+      margin-top: 160px;
+    }
+
+    h5 {
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 30px;
+      letter-spacing: -0.03em;
+      color: var(--clr-accent);
+    }
+
+    p,
+    span {
+      font-size: 16px;
+      line-height: 26px;
+      font-weight: normal;
+      color: var(--clr-primary);
+    }
+
+    img {
+      width: 100%;
+    }
+
+    /* common */
+    body {
+      background: url(images/bg-header-mobile.png) no-repeat 0 0/contain;
+    }
+
+    header {
+      display: flex;
+      flex-direction: column;
+      justify-self: center;
+      align-items: center;
+    }
+
+    header img {
+      margin-top: 124px;
+      width: min(125px);
+    }
+
+    header h1 {
+      margin-top: 50px;
+      width: 80%;
+      text-align: center;
+      letter-spacing: -0.03em;
+      word-spacing: -2px;
+    }
+
+    header p {
+      width: 80%;
+      margin-top: 16px;
+      text-align: center;
+      word-spacing: -2px;
+    }
+
+    [class^=btn_] {
+      padding: 10px 20px;
+      border-radius: 50px;
+      /* background: wheat; */
+      /* box-shadow: 0 0 5px 0 rgba(0, 0, 0, .8); */
+      color: white;
+      margin-top: 24px;
+    }
+
+    .btn_wrap {
+      padding: 0;
+      width: 80%;
+      display: flex;
+      flex-direction: column;
+      margin-top: 24px;
+      text-align: center;
+    }
+
+
+    .btn_cyan {
+      background: var(--clr-cyan);
+      box-shadow: 0 0 5px 0 var(--clr-cyan);
+    }
+
+    .btn_blue {
+      background: var(--clr-lgiht_blue);
+      box-shadow: 0 0 5px 0 var(--clr-lgiht_blue);
+    }
+
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+
+    }
+
+    .content .c1 {}
+
+    .content .c1 h3 {
+      width: 70%;
+      margin: 160px auto 0px;
+    }
+
+    .content .c1 p {
+      width: 80%;
+      margin: 14px auto;
+    }
+
+    .content .c1 img {
+      width: 80%;
+      margin-top: 62px;
+      margin-bottom: 8px;
+    }
+
+    .c1 .c1_inner h5 {
+      margin-top: 48px;
+    }
+
+    .c1 .c1_inner p {
+      margin: 10px auto;
+    }
+
+    .content .c2 {}
+
+    .content .c2 h3 {
+      width: 70%;
+      margin: 160px auto 0;
+    }
+
+    .content .c2 p {
+      width: 80%;
+      margin: 14px auto 0;
+      word-spacing: -1px;
+    }
+
+    .content .c2 img {
+      width: 90%;
+      margin: 60px auto 0;
+    }
+
+
+    .content .c3 {}
+
+    .content .c3 h3 {
+      width: 70%;
+      margin: 160px auto 0;
+    }
+
+    .content .c3 p {
+      width: 80%;
+      margin: 10px auto 0;
+    }
+
+    .content [class^=c3_inner] {}
+
+    .content .c3_inner1 img {
+      margin-top: 96px;
+    }
+
+    .content .c3_inner2 img {
+      margin-top: 60px;
+
+    }
+
+    .content .c3_inner3 img {
+      margin-top: 56px;
+
+    }
+
+    .content [class^=c3_inner] img {
+      width: 11.5%;
+
+    }
+
+    .content [class^=c3_inner] h5 {
+      width: 70%;
+      margin: 40px auto 0;
+    }
+
+    .content [class^=c3_inner] p {
+      width: 80%;
+      margin: 18px auto 0;
+    }
+
+
+    .content .c4 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 63px;
+    }
+
+    .content .c4 img {
+      width: 31%;
+    }
+
+    .content .c4 img:nth-of-type(1) {
+      margin-top: 132px;
+    }
+
+
+    .content .c5 {}
+
+    .content .c5 h3 {
+      width: 75%;
+      margin: 160px auto 0;
+    }
+
+    .content .c5 p {
+      width: 80%;
+      margin: 16px auto 0;
+
+    }
+
+    .content .c5 .btn_wrap {
+      margin: 24px auto 0;
+    }
+
+
+
+    footer {
+      margin-top: 170px;
+      background: hsla(220, 18%, 97%, 1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    footer img {
+      margin: 65px auto 51px;
+      width: 14.5%;
+    }
+
+    footer .footer_word {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 22px;
+    }
+
+    footer .footer_word span {
+      color: hsla(210, 10%, 33%, 1);
+    }
+
+    footer .footer_sns {
+      display: flex;
+      gap: 40px;
+
+    }
+
+    footer .footer_sns img {
+      width: 25%;
+    }
+
+
+    /* desktop */
+    @media (min-width: 768px) {
+      body {
+        background: none;
+      }
+
+      p {
+        font-size: 20px;
+        line-height: 28px;
+        letter-spacing: 0.01em;
+      }
+
+      h3 {
+        font-weight: bold;
+        font-size: 38px;
+      }
+
+
+      header {
+        background: url(images/bg-header-desktop.png) no-repeat 0 0/cover;
+      }
+
+      header img {
+        margin-top: 160px;
+      }
+
+      header h1 {
+        font-size: 48px;
+        line-height: 60px;
+        margin-top: 60px;
+      }
+
+      header p {
+        width: 686px;
+      }
+
+      .btn_wrap {
+        justify-content: center;
+        flex-direction: row;
+        gap: 16px;
+      }
+
+      [class^=btn_] {}
+
+
+
+      .content .c1 p {
+        width: 776px;
+        text-align: center;
+      }
+
+      .content .c1 h3 {
+        margin: 148px auto 0px;
+      }
+
+
+
+      .content .c1 .c1_wrap {
+        display: flex;
+        margin-left: auto;
+        margin-top: 148px;
+        width: 80%;
+        justify-content: center;
+        margin: 148px auto 0;
+      }
+
+      .content .c1 img {
+        position: relative;
+        /* width: 752px; */
+        width: min(752px, 50%);
+        left: -20%;
+        margin: 0;
+      }
+
+      .content .c1 .c1_inner--text {
+        width: min(438px, 50%);
+
+      }
+
+      .content .c1 .c1_wrap .c1_inner p {
+        /* width: 438px; */
+        width: 100%;
+        text-align: start;
+        margin: 10px 0;
+      }
+
+
+      .content .c1 h5 {
+        text-align: start;
+        /* width: 191px; */
+        width: 100%;
+        margin: 48px 0 0;
+      }
+
+
+      .content .c2 p {
+        width: min(780px, 80%);
+      }
+
+      .content .c2 img {
+        width: 60%;
+      }
+
+      .content .c3_wrap {
+        display: flex;
+        margin: 0 auto;
+        width: 80%;
+      }
+      
+      .content [class^=c3_inner] {
+        margin-top:  20px;
+        width: 33%;
+      }
+      .content [class^=c3_inner] img {
+      margin-top: 60px;
+}
+
+      .content .c4 {
+        display: flex;
+        flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 140px auto 0;
+    width: 80%;
+    gap: min(64px, 3.5vw);
+  }
+  .content .c4 img{
+    width: 19%;
+  }
+
+.content .c4 img:nth-of-type(1) {
+    margin-top: 0px;
+}
+  .content .c5 p {
+    width: min( 780px,80%);
+  }
+
+  footer{
+    height: 150px;
+    flex-direction: row;
+    justify-content: space-evenly;
+    
+  }
+  
+  footer img{
+    
+    margin: 0;
+    width: 60px;
+  }
+
+  footer .footer_word {
+    flex-direction: row;
+    width: min(500px, 70%);
+    flex-wrap: wrap;
+  }
+  
+  footer .footer_word span {
+    flex: 0 1 150px;
+    text-align: left;
+  }
+
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ================html -->
+  <header>
+    <img src="images/logo.svg" alt="">
+    <h1>A history of everything you copy</h1>
+    <p>Clipboard allows you to track and organize everything you
+      copy. Instantly access your clipboard on all your devices.</p>
+    <div class="btn_wrap">
+      <div class="btn_cyan">Download for iOS</div>
+      <div class="btn_blue">Download for Mac</div>
+    </div>
+  </header>
+
+  <div class="content">
+    <div class="c1">
+      <h3>Keep track of your snippets</h3>
+      <p>Clipboard instantly stores any item you copy in the cloud,
+        meaning you can access your snippets immediately on all your
+        devices. Our Mac and iOS apps will help you organize everything.</p>
+      <div class="c1_wrap">
+        <img src="images/image-computer.png" alt="">
+        <div class="c1_inner--text">
+          <div class="c1_inner">
+            <h5>Quick Search</h5>
+            <p>Easily search your snippets by content, category, web address, application, and more.</p>
+          </div>
+          <div class="c1_inner">
+            <h5>iCloud Sync</h5>
+            <p>Instantly saves and syncs snippets across all your devices.</p>
+          </div>
+          <div class="c1_inner">
+            <h5>Complete History</h5>
+            <p>Retrieve any snippets from the first moment you started using the app.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="c2">
+      <h3>Access Clipboard anywhere</h3>
+      <p>Whether you’re on the go, or at your computer, you can access all your Clipboard
+        snippets in a few simple clicks.</p>
+      <img src="images/image-devices.png" alt="">
+    </div>
+    <div class="c3">
+      <h3>Supercharge your workflow</h3>
+      <p>We’ve got the tools to boost your productivity.</p>
+    </div>
+    <div class="c3_wrap">
+      <div class="c3_inner1">
+        <img src="images/icon-blacklist.svg" alt="">
+        <h5>Create blacklists</h5>
+        <p>Ensure sensitive information never makes its way to your clipboard by excluding certain sources.</p>
+      </div>
+      <div class="c3_inner2">
+        <img src="images/icon-text.svg" alt="">
+        <h5>Plain text snippets</h5>
+        <p>Remove unwanted formatting from copied text for a consistent look.</p>
+      </div>
+      <div class="c3_inner3">
+        <img src="images/icon-preview.svg" alt="">
+        <h5>Sneak preview</h5>
+        <p>Quick preview of all snippets on your Clipboard for easy access.</p>
+      </div>
+    </div>
+
+    <div class="c4">
+      <img src="images/logo-google.png" alt="">
+      <img src="images/logo-ibm.png" alt="">
+      <img src="images/logo-microsoft.png" alt="">
+      <img src="images/logo-hp.png" alt="">
+      <img src="images/logo-vector-graphics.png" alt="">
+    </div>
+    <div class="c5">
+      <h3>Clipboard for iOS and Mac OS</h3>
+      <p>Available for free on the App Store. Download for Mac or iOS, sync with iCloud
+        and you’re ready to start adding to your clipboard.</p>
+      <div class="btn_wrap">
+        <div class="btn_cyan">Download for iOS</div>
+        <div class="btn_blue">Download for Mac</div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <img src="images/logo.svg" alt="">
+    <div class="footer_word">
+      <span>FAQs</span>
+      <span>Contact Us</span>
+      <span>Privacy Policy</span>
+      <span>Press Kit</span>
+      <span>Install Guide</span>
+    </div>
+    <div class="footer_sns">
+      <img src="images/icon-facebook.svg" alt="">
+      <img src="images/icon-twitter.svg" alt="">
+      <img src="images/icon-instagram.svg" alt="">
+    </div>
+  </footer>
+
+</body>
+
+</html>

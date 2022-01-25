@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | NFT preview card component</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background: rgba(13, 26, 45, 1);
+      font-family: 'Outfit', sans-serif;
+    }
+
+    section .container {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    section .container .card {
+      width: 230px;
+      height: 380px;
+      position: relative;
+      padding: 20px;
+
+      background: rgba(21, 39, 63, 1);
+      border-radius: 10px;
+    }
+
+    section .container .card img {
+      position: relative;
+      display: block;
+      width: 100%;
+
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    section .container .card h2 {
+      display: block;
+      position: relative;
+      margin: 10px 0;
+
+
+      cursor: pointer;
+      font-size: 18px;
+      color: white;
+      font-weight: 400;
+      background: rgba(21, 39, 63, 1);
+    }
+
+    
+    section .container .card .content .content-text {
+      
+      position: relative;
+      width: 100%;
+      
+      color: rgb(152, 152, 189);
+      background: rgba(21, 39, 63, 1);
+      font-size: 12px;
+      font-weight: 300;
+    }
+    
+    section .container .card .content {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+
+      background: rgba(21, 39, 63, 1);
+    }
+    
+
+    section .container .card .content .content-info-eth img{
+      position: relative;
+      display: inline-block;
+      margin: 10px 0;
+      width: 6px;
+    }
+
+    section .container .card .content .content-info-eth{
+      background: rgba(21, 39, 63, 1);
+      display: flex;
+      justify-content: left;
+      align-items: center;
+    }
+
+
+    section .container .card .content .content-info-eth span{
+      position: relative;
+      display: inline-block;
+      margin-left: 5px;
+
+
+      color: rgb(87, 205, 209);
+      font-size: 10px;
+      font-weight: 600;
+      background: rgba(21, 39, 63, 1);
+    }
+
+    section .container .card .content .content-info-time {
+      position: relative;
+      margin-left: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+
+      background: rgba(21, 39, 63, 1);
+      color: rgb(125, 125, 250);
+    }
+
+    section .container .card .content .content-info-time img {
+      position: relative;
+      margin-right: 3px;
+      width: 10px;
+    }
+
+    section .container .card .content .content-info-time span {
+      color: rgb(152, 152, 189);
+      background: rgba(21, 39, 63, 1);
+      font-size: 12px;
+    }
+
+    section .container .card .user {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: left;
+      width: 100%;
+      
+      background: rgba(21, 39, 63, 1);      
+    }
+
+        section .container .card .user .line {
+          position: absolute;
+          top: -5px;
+          margin: 10px 0;
+          width: 100%;
+          height: 1px;
+          background: rgba(255, 255, 255, 0.2);
+        }
+
+    section .container .card .user img{
+      position: relative;
+      margin-top: 20px;
+      width: 25px;
+      border-radius: 50%;
+      border: 1px solid white;
+    }
+
+    section .container .card .user .user-info-comment {
+      position: absolute;
+      display: inline-block;
+      color: white;
+      width: 85%;
+      font-size: 8px;
+      left: 18%;
+      margin-top: 18px;
+      background: rgba(21, 39, 63, 1);
+      letter-spacing: 0.5px;
+    }
+    section .container .card .user .user-info-comment span:nth-child(1) {
+      background: rgba(21, 39, 63, 1);
+      color: rgb(152, 152, 189);
+    }
+    
+    section .container .card .user .user-info-comment span:nth-child(2) {
+      background: rgba(21, 39, 63, 1);
+      cursor: pointer;
+    }
+
+    /* ★ 이미지 색상이 약함 */
+    section .container .card img:hover{
+      background: rgb(87, 205, 209);
+      mix-blend-mode:screen;
+    }
+
+    section .container .card h2:hover,
+    section .container .card .user .user-info-comment span:nth-child(2):hover {
+      color: rgb(87, 205, 209);
+    }
+
+    /* ★ 의문의 오버스크룰 발생 */
+    @media (max-width : 768px){
+      section .container {
+        /* overflow: hidden;
+        top: 0;
+        left: 0;
+        width: 75%;
+        height: 75vh; */
+      }
+    }
+
+
+
+
+  </style>
+
+</head>
+
+<section>
+  <div class="container">
+
+    <div class="card">
+      <img src="images/image-equilibrium.jpg" alt="">
+      <h2>Equilibrium #3429</h2>
+
+      <div class="content">
+        <div class="content-text">Our Equilibrium collection promotes <p></p>balance and calm.</div>
+        <div class="content-info-eth">
+          <img src="images/icon-ethereum.svg" alt="">
+          <span>0.041 ETH</span>
+        </div>
+        <div class="content-info-time">
+          <img src="images/icon-clock.svg" alt="">
+          <span>3 days left</span>
+        </div>
+      </div>
+
+      <div class="user">
+        <div class="line"></div>
+        <img src="images/image-avatar.png" alt="">
+        <div class="user-info-comment">
+          <span>Creation of</span> <span>Jules Wyvern</span>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+
+</body>
+
+</html>

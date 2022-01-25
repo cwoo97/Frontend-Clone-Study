@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Fylo data storage component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+
+  <style>
+    /*---------- CSS START ----------*/
+    @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+    /* root */
+    :root {
+      /* color */
+      --clr-Pale-Blue: hsl(243, 100%, 93%);
+      --clr-Grayish-Blue: hsl(229, 7%, 55%);
+      --clr-Dark-Blue: hsl(228, 56%, 26%);
+      --clr-Very-Dark-Blue: hsl(229, 57%, 11%);
+      --clr-primary-Gradient: hsl(6, 100%, 80%), hsl(335, 100%, 65%);
+
+      /* font weight */
+      --ft-weight-400: 400;
+      --ft-weight-700: 700;
+    }
+
+    /* base */
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Raleway', sans-serif;
+      font-size: 62.5%; /* 10px=1rem */
+      color: var(--clr-Pale-Blue);
+    }
+
+
+
+    /* layout */
+    .card {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 16px;
+
+      width: 100%;
+      height: 100vh;
+      background: url(images/bg-mobile.png);
+    }
+
+    .lt{
+      position: relative;
+      width: 86.9333vw;
+      height: 53.6vw;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-direction: column;
+      padding-left: 10.9333vw;
+      gap: 8.848vw;
+      
+      background: var(--clr-Dark-Blue);
+      border-radius: 10px 100px 10px 10px;
+    }
+    
+    .rt{
+      position: relative;
+      width: 86.9333vw;
+      height: 42.6666vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      background: var(--clr-Dark-Blue);
+      border-radius: 10px;
+    }
+    
+    .point{
+      position: absolute;
+      width: 47.7333vw;
+      height: 19.2vw;
+      bottom: 14%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2.1333vw;
+
+      background: white;
+      border-radius: 10px;
+    }
+
+    /* conponent */
+    .lt-main-icon{
+      width: 36vw;
+      height: 10.4720vw;
+
+      background: url(images/logo.svg);
+      background-size: cover;
+    }
+
+    .lt-sub-icon{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 4.2666vw;
+
+    }
+    
+    .lt-sub-icon>a{
+      width: 12.8vw;
+      height: 12.8vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      background: var(--clr-Very-Dark-Blue);
+      border-radius: 10px;
+    }
+
+
+    .rt-title{
+      position: absolute;
+      font-size: 1.4rem;
+      font-weight: 400;
+      margin-bottom: 19.5333vw;
+    }
+
+    .rt-title>span{
+      color: white;
+      font-size: 1em;
+      font-weight: 700;
+    }
+
+    .gaze{
+      position: relative;
+      width: 69.3333vw;
+      height: 5.3333vw;
+      padding: 0.8vw;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+     flex-direction: column;
+
+      border-radius: 47px;
+      background: var(--clr-Very-Dark-Blue);
+    }
+
+    .gaze-bar{
+      position: absolute;
+      width: 50.6666vw;
+      height: 3.7333vw;
+      
+      background: linear-gradient(90deg, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+      border-radius: 21px;
+    }
+    
+    .gaze-info{
+      width: 100%;
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      top: 5.833vw;
+    }
+
+
+    .gaze-info>span{
+      display: block;
+      position: relative;
+      font-size: 3.4666vw;
+      color: white;
+    }
+
+    .circle{
+      position: absolute;
+      width: 2.8333vw;
+      height: 2.8333vw;
+      left: 70%;
+
+      border-radius: 50%;
+      background: white;
+    }
+
+
+    .point-score{
+      font-size: 10.6666vw;
+      color: black;
+    }
+
+    .point-info{
+      width: 14.1333vw;
+      color: gray;
+    }
+
+    /* ============= PC ================ */
+    @media (min-width: 768px) {
+
+      body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: var(--clr-Very-Dark-Blue);        
+      }
+
+      .card{
+        position: relative;
+        min-width: 1440px;
+        min-height: 840px;
+        overflow-wrap: hidden;
+        background: var(--clr-Very-Dark-Blue);
+      }
+      
+      .card::before{
+        width: 100%;
+        height: 50%;
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+
+        background: url(images/bg-desktop.png);
+      }
+
+      .lt{
+        position: absolute;
+        width: 350px;
+        height: 201px;
+        left: 260px;
+        top: 289px;
+      }
+
+      .rt{
+        position: absolute;
+        width: 540px;
+        height: 154px;
+        left: 640px;
+        top: 336px;
+      }
+
+      .rt-title{
+        position: absolute;
+        width: 237px;
+        height: 16px;
+        left: 40px;
+        top: 40px;
+
+        font-family: Raleway;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 16px;
+        letter-spacing: 0.02em;
+
+        color: #FFFFFF;
+
+      }
+
+      .point{
+        position: absolute;
+        width: 177px;
+        height: 75px;
+        left: 961px;
+        top: 294px;
+        border: 10px 10px 0 10px;
+
+        background: #FFFFFF;
+        border-radius: 10px 10px 0px 10px;
+      }
+
+      .point::after{
+        content: '';
+        position: absolute;
+        top: 54px;
+        left: 135px;
+
+        border: 21px solid white;
+        border-left: 21px solid transparent;
+        border-bottom: 21px solid transparent;
+        border-top: 21px solid transparent;
+
+      }
+
+      .lt-main-icon{
+        display: inline-block;
+        position: absolute;
+        left: 0%;
+        right: 0%;
+        top: 1.38%;
+        bottom: 0.44%;
+        width: 9.375vw;
+        height: 2.7270vw;
+        margin: 40.55px 0 0 41px;
+
+      }
+      .lt-sub-icon>a:nth-last-child(1){
+        position: absolute;
+        width: 48px;
+        height: 48px;
+        left: 169px;
+        top: 113px;
+
+        background: #0C122C;
+        border-radius: 10px;
+      }
+
+      .lt-sub-icon>a:nth-last-child(2){
+        position: absolute;
+        width: 48px;
+        height: 48px;
+        left: 105px;
+        top: 113px;
+
+        background: #0C122C;
+        border-radius: 10px;
+      }
+
+      .lt-sub-icon>a:nth-last-child(3){
+        position: absolute;
+        width: 48px;
+        height: 48px;
+        left: 41px;
+        top: 113px;
+
+        background: var(--clr-Very-Dark-Blue);
+        border-radius: 10px;
+      }
+
+      .lt-sub-icon>a{
+        height: 0;
+      }
+
+      .point-score{
+        position: absolute;
+        width: 68px;
+        height: 47px;
+        left: 25px;
+        top: 12px;
+
+        font-family: Raleway;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 40px;
+        line-height: 47px;
+        /* identical to box height */
+
+        letter-spacing: 0.02em;
+
+        color: #000000;
+      }
+
+      .point-info{
+        position: absolute;
+        width: 53px;
+        height: 15px;
+        left: 100px;
+        top: 30px;
+
+        font-family: Raleway;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 13px;
+        line-height: 15px;
+        text-align: right;
+
+        color: #848794;
+
+      }
+
+      .gaze{
+        position: absolute;
+        width: 460px;
+        height: 20px;
+        left: 40px;
+        top: 73px;
+
+        background: #0C122C;
+        border-radius: 10px;
+      }
+    
+      .gaze-bar{
+        position: absolute;
+        width: 340px;
+        height: 14px;
+        right: 117px;
+        top: 4px;
+
+        background: linear-gradient(90deg, #FFA399 0%, #FF4C97 100%);
+        border-radius: 21px;
+      }
+
+      .gaze-info{
+        position: absolute;
+      }
+
+      .gaze-info>:nth-last-child(2){
+        position: absolute;
+        width: 28px;
+        height: 15px;
+        left: -7px;
+        top: -51px;
+
+        font-family: Raleway;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 13px;
+        line-height: 15px;
+        letter-spacing: 0.04em;
+
+        color: #FFFFFF;
+      }
+
+      .gaze-info>:nth-last-child(1){
+        position: absolute;
+        width: 49px;
+        height: 15px;
+        left: 399px;
+        top: -52px;
+
+        font-family: Raleway;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 13px;
+        line-height: 15px;
+        text-align: right;
+
+        color: #FFFFFF;
+      }
+
+      .circle{
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        left: 330px;
+        top: 4px;
+
+        background: #FFFFFF;
+      }
+
+    }
+
+
+
+  </style>
+</head>
+
+<body>
+  <!-- ----------  HTML START  ---------- -->
+  <section class="card">
+    <div class="lt">
+      <div class="lt-main-icon"></div>
+      <div class="lt-sub-icon" >
+        <a href="#"><img src="images/icon-document.svg" alt="icon"></a>
+        <a href="#"><img src="images/icon-folder.svg" alt="icon"></a>
+        <a href="#"><img src="images/icon-upload.svg" alt="icon"></a>
+      </div>
+    </div>
+    <div class="rt"> 
+      <h4 class="rt-title">You’ve used <span>815GB</span> of your storage</h4>
+      <div class="gaze">
+        <div class="gaze-bar"></div>
+        <div class="gaze-info">
+          <span>0 GB</span>
+          <span>1000 GB</span>
+        </div>
+        <div class="circle"></div>
+      </div>
+    </div>
+    <div class="point">
+      <h3 class="point-score">185</h3>
+      <span class="point-info">GB Left</span>
+    </div>
+  </section>
+
+  
+
+  
+
+  
+  
+
+  </div>
+</body>
+
+</html>

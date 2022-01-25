@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Stats preview card component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    /* .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); } */
+
+    /* ======= :root ======== */
+    :root {
+      --bg-color: hsl(244, 38%, 16%);
+      --filter-color: hsl(277, 64%, 61%, 60%);
+      --title-ft-color: hsl(277, 64%, 61%);
+      --info-ft-color: hsl(0, 0%, 100%, 75%);
+    }
+
+    /* ======= base ======== */
+
+    * {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      box-sizing: border-box;
+      font-size: 15px;
+      color: white;
+      position: relative;
+
+    }
+
+    body {
+      background: black;
+    }
+
+    ul,
+    ol,
+    li {
+      list-style: none;
+    }
+
+    /* ======= section ======== */
+    #section {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      width: 77.0833vw;
+      height: 30.9722vw;
+      background: var(--bg-color);
+      border-radius: 10px;
+    }
+
+    .card {
+      float: left;
+      width: 39.5833vw;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding-left: 70px;
+      padding-right: 90px;
+
+      border-radius: 10px 0 0 10px;
+    }
+
+    .card .title {
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 25px;
+      line-height: 45px;
+    }
+
+    .card .title span {
+      font-size: 1em;
+      color: var(--title-ft-color);
+      font-weight: 600;
+    }
+
+    .card_info {
+      padding-bottom: 60px;
+      padding-right: 50px;
+      color: var(--info-ft-color);
+      line-height: 20px;
+    }
+
+    .card_bottom {
+      width: 100%;
+
+      display: flex;
+      justify-content: space-evenly;
+      flex-direction: column;
+
+      font-size: 3;
+    }
+
+    .card_score,
+    .score_info {
+      width: 85%;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .card_score li {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    .score_info li {
+      display: inline-block;
+      flex-direction: row;
+      color: var(--info-ft-color);
+    }
+
+    .score_info li:nth-child(3) {
+      left: -6px;
+    }
+
+    /* ========== 이미지 ========== */
+    .img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .img_filter {
+      position: absolute;
+      right: 0;
+      z-index: 1;
+      width: 37.5vw;
+      height: 100%;
+      background: var(--filter-color);
+      border-radius: 0 10px 10px 0;
+    }
+
+    .img img {
+      position: relative;
+      width: 37.5vw;
+      height: 100%;
+
+      border-radius: 0 10px 10px 0;
+    }
+
+    @media (max-width : 768px) {
+
+      #section {
+        width: 100%;
+        height: 100vh;
+      }
+
+      .container {
+        width: 85%;
+        height: 80%;
+
+        border-radius: 10px;
+      }
+
+      .card {
+        width: 80%;
+        height: 70%;
+        display: block;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 0;
+        top: 215px;
+      }
+
+      .card .title {
+        display: block;
+        text-align: center;
+        font-size: 1.4rem;
+        line-height: 25px;
+        margin-bottom: 15px;
+      }
+
+      .card_info {
+        display: block;
+        text-align: center;
+        padding: 0 3px;
+        font-size: 0.8rem;
+        margin-bottom: 20px;
+      }
+
+      .img {
+        position: absolute;
+        width: 100%;
+        height: 30%;
+
+        border-radius: 10px 10px 0 0;
+      }
+
+      .img img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+
+        border-radius: 10px 10px 0 0;
+      }
+
+      .img_filter {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+
+        border-radius: 10px 10px 0 0;
+      }
+
+      .card_score {
+        align-items: center;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+      }
+      .card_score li{
+        margin: 20px 0 30px;
+        font-size: 1.4rem;
+      }
+      
+      .score_info{
+        position: absolute;
+        align-items: center;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column; 
+      }
+      .score_info li:nth-child(1){
+        top: 9px;
+        margin-bottom: 30px;
+      }
+      .score_info li:nth-child(2){
+        top: 36px;
+        margin-bottom: 30px;
+      }
+      .score_info li:nth-child(3){
+        top: 62px;
+        margin-bottom: 30px;
+        left: 0;
+
+      }
+
+    }
+
+
+  </style>
+</head>
+<!-- ======= body ======== -->
+
+<body>
+  <section id="section">
+    <div class="container">
+      <div class="card">
+        <span class="title">Get <span>insights</span> that help your business grow.</span>
+        <span class="card_info">Discover the benefits of data analytics and make better decisions regarding revenue,
+          customer
+          experience, and overall efficiency.</span>
+        <div class="card_bottom">
+          <ul class="card_score">
+            <li>10k+</li>
+            <li>314</li>
+            <li>12m+</li>
+          </ul>
+          <ul class="score_info">
+            <li>companies</li>
+            <li>templates</li>
+            <li>queries</li>
+          </ul>
+        </div>
+      </div>
+      <div class="img">
+        <div class="img_filter"></div>
+        <img src="images/image-header-desktop.jpg" alt="">
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>. -->
+  </div>
+</body>
+
+</html>
