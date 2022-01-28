@@ -1,0 +1,324 @@
+.header_in{
+      padding-top: 50px;
+}
+
+.header_tit{
+  display: flex;
+  justify-content: space-between;
+  height: 48px;
+  margin: 0 50px;
+  
+} 
+
+.header_logo{
+  width: 151px;
+  height: 31.5px;
+  background: url(images/logo.svg) no-repeat 0 0 / contain;
+} 
+
+
+
+.header_cont{
+  margin: 0 50px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header_cont_lt{
+  margin-top: 169px;
+}
+
+.header_cont_lt_title{
+  max-width: 439px;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 60px;
+}
+
+.header_cont_lt_title_sub {
+  max-width: 515px;
+  margin: 28px 0 32px;
+  line-height: 27px;
+}
+
+
+.header_cont_rt{
+  margin-top: 70px;
+}
+
+.l-cont.b .cont_rt{
+  order: 1;
+}
+
+.header_cont_rt img{
+  max-width: 660px;
+}
+
+.cont_rt{
+  width: 490px;
+  margin: 98px 0 0 80px;
+}
+
+.l-cont .cont_tit {
+  font-weight: bold;
+  font-size: 28px; 
+  line-height: 42px;
+  letter-spacing: -0.01em;
+  display: inline-block;
+}
+
+.l-cont .cont_tit_sub {
+  margin-top: 14px;
+  color: hsla(208, 11%, 55%, 1);
+}
+
+.l-cont img {
+  width: 375px;
+}
+
+.card_primary p{
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 48px;
+}
+
+.footer_logo a img{
+
+  filter: brightness(0) invert(1);
+  margin: 192px 0 39px;
+}
+
+.footer_cont{
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer_info {
+  width: 460px;
+}
+
+.footer_info img {
+      vertical-align: top;
+  width: 18px;
+  display: inline-block;
+}
+
+.footer_info p{
+  
+  display: inline-block;
+  margin: 0 20px 10px;
+  width: 370px;
+}
+
+
+
+
+.footer_menu{
+    width: 350px;
+}
+
+.footer_menu li{
+  margin-left: 147px;
+  margin-bottom: 19px;
+}
+
+.footer_menu li a{
+  color: white;
+}
+
+
+.footer_icon {
+  display: flex;
+  width: 350px;
+  gap: 15px ;
+}
+
+.footer_icon img{
+  filter: brightness(0) invert(1);
+  width: 30px;
+  height: 30px;
+  border: 2px solid white;
+  padding: 5px;
+  border-radius: 50%;
+
+}
+
+
+.copy_right{
+  position: absolute;
+  margin: 39px 50px;
+  right: 0;
+}
+
+
+
+
+
+
+    @media (max-width : 1000px) {
+.l-wrap {
+  max-width: 375px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+      #header {
+        height: 850px;
+        margin: 0 auto 60px;
+        background: hsla(193, 100%, 96%, 1) url(images/bg-hero-mobile.svg) no-repeat 0 0 / contain;
+      }
+
+      .header_in {
+        padding-top: 25px;
+      }
+
+
+  .header_tit {
+  margin: 0 10px;
+  }
+
+
+  .button_primary {
+    width: 130px;
+    height: 35px;
+    font-size: 16px;
+  }
+
+  .header_logo {
+    width: 140px;
+        margin-top: 8px;
+  }
+
+  .header_cont {
+    flex-direction: column;
+        align-items: center;
+  }
+
+  .header_cont_lt {
+    margin: 0;
+  }
+
+  .header_cont_lt_title {
+    font-size: 24px;
+    margin-top: 100px;
+    line-height: 35px;
+    text-align: center;
+  }
+
+  .header_cont_lt_title_sub {
+    text-align: center;
+    font-size: 17px;
+  }
+
+.button_accent {
+  width: 262px;
+  margin: 0 auto;
+  display: block;
+  height: 45px;
+  font-size: 16px;
+}
+
+.header_cont_rt img {
+  max-width: 300px;
+    }
+
+.l-cont {
+  height: 540px;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+
+.l-cont img {
+  width: 280px;
+}
+
+.cont_rt {
+  width: 300px;
+  margin: 30px 0 0;
+  text-align: center;
+}
+
+.l-cont.b .cont_rt {
+  order: 0;
+}
+
+.card_primary {
+  position: absolute;
+  width: calc(100% - 20px);
+  height: 170px;
+  gap: 10px;
+      transform: translate(-50%, 40%);
+}
+
+.card_primary p {
+  font-size: 16px;
+}
+
+.card_primary button {
+      width: 180px;
+      display: block;
+      height: 35px;
+      font-size: 10px;
+}
+
+.l-footer {
+  margin: 225px auto 0;
+  height: 100%;
+}
+
+
+.footer_cont {
+  flex-direction: column;
+}
+
+.footer_info {
+  width: 100%;
+}
+
+
+.footer_logo a img {
+      width: 200px;
+  margin: 125px 0 25px;
+}
+
+.footer_info p {
+  display: inline-block;
+  margin: 0 20px 25px 20px;
+  width: 277px;
+  font-size: 15px;
+}
+
+
+.footer_menu {
+  width: 100%;
+}
+.footer_menu li {
+  margin: 0;
+}
+
+.footer_menu li a {
+  margin-top: 25px;
+  display: block;
+}
+
+.footer_icon {
+  width: 100%;
+  justify-content: center;
+  margin: 50px 0 10px;
+}
+
+
+.copy_right {
+  position: relative;
+  right: auto;
+  margin: 0;
+  font-size: 14px;
+  text-align: center;
+  line-height: 50px;
+  padding-bottom: 40px;
+}
+
+
+
+
+    }
